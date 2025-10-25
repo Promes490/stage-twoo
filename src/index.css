@@ -1,0 +1,50 @@
+:root{
+  --max-width: 1440px;
+  --container-pad: 16px;
+  --card-radius: 12px;
+  --accent: #6366f1;
+  --amber: #f59e0b;
+  --green: #10b981;
+  --gray: #6b7280;
+}
+
+*{box-sizing:border-box}
+body{font-family:Inter, system-ui, Arial, sans-serif; margin:0; background:#f8fafc; color:#0f172a; line-height:1.4}
+.container{max-width:var(--max-width); margin:0 auto; padding:20px var(--container-pad)}
+.card{background:white; border-radius:var(--card-radius); box-shadow:0 8px 30px rgba(2,6,23,0.06); padding:16px}
+.btn{background:var(--accent); color:white; border:none; padding:8px 14px; border-radius:8px; cursor:pointer; transition: all 0.2s ease}
+.btn:hover{background:#5856eb; transform: translateY(-1px)}
+.btn-outline{background:transparent; color:var(--accent); border:1px solid rgba(99,102,241,0.2)}
+.btn-outline:hover{background:var(--accent); color:white}
+.btn-ghost{background:transparent; border:none; color:#374151; cursor:pointer; transition: color 0.2s ease}
+.btn-ghost:hover{color:var(--accent)}
+.btn-small{padding:6px 8px; font-size:13px}
+.btn-danger{background:#ef4444}
+.btn-danger:hover{background:#dc2626}
+
+/* layout pieces */
+.dash-header{display:flex; justify-content:space-between; align-items:center; margin-top:10px}
+.cards-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:16px}
+.stat{font-size:28px; font-weight:700}
+
+/* Tickets */
+.grid-two{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+.ticket-card{margin-bottom:12px}
+.ticket-head{display:flex; justify-content:space-between; align-items:center}
+.tag{padding:6px 10px; border-radius:999px; font-size:12px; text-transform:capitalize; font-weight:500}
+.tag.open{background:rgba(16,185,129,0.12); color:var(--green)}
+.tag.in_progress{background:rgba(245,158,11,0.12); color:var(--amber)}
+.tag.closed{background:rgba(107,114,128,0.08); color:var(--gray)}
+
+.auth-card{max-width:420px; margin:40px auto;}
+
+/* form basics */
+input, select, textarea{width:100%; padding:8px; margin-top:6px; margin-bottom:8px; border-radius:8px; border:1px solid #e6eef8; transition: border-color 0.2s ease}
+input:focus, select:focus, textarea:focus{outline:none; border-color:var(--accent)}
+.error{color:#dc2626; font-size:13px}
+
+/* responsive */
+@media (max-width:900px){
+  .cards-grid{grid-template-columns:1fr}
+  .grid-two{grid-template-columns:1fr}
+}
